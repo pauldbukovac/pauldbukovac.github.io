@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>PartyQ</title>
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="partyQ.js"></script>
+</head>
+<body>
+<input type="text" id="iQuery" autocomplete="off">
+<br>
+<input type="submit" id="bSearch" value="Search" onclick="bSearch_Click()">
+<br>
+<div id="dTracks"></div>
+<br>
+<input type="submit" id="bSend" value="Add to Queue" onclick="bSend_Click()" disabled="true">
+<br>
+<span id="sMessage" style="display:none;">Song successfully added.</span>
+<script>
+// Get the input field
+var input = document.getElementById("iQuery");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Cancel the default action, if needed
+  event.preventDefault();
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Trigger the button element with a click
+    document.getElementById("bSearch").click();
+  }
+});</script>
+</body>
+</html>
